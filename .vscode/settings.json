@@ -1,29 +1,12 @@
 {
     // Formatter
-    "[javascript]": {
-		"editor.defaultFormatter": "esbenp.prettier-vscode",
-		"editor.formatOnSave": true
-    },
-    "[javascriptreact]": {
-		"editor.defaultFormatter": "esbenp.prettier-vscode",
-		"editor.formatOnSave": true
-    },
     "[typescript]": {
-		"editor.defaultFormatter": "esbenp.prettier-vscode",
-		"editor.formatOnSave": true
-    },
-    "[typescriptreact]": {
-		"editor.defaultFormatter": "esbenp.prettier-vscode",
-		"editor.formatOnSave": true
-    },
-    "[css]": {
-        "editor.defaultFormatter": "vscode.css-language-features",
+        "editor.defaultFormatter": "esbenp.prettier-vscode",
         "editor.formatOnSave": true
     },
-    "[html]": {
-		"editor.defaultFormatter": "esbenp.prettier-vscode",
-		"editor.formatOnSave": true,
-        "prettier.tabWidth": 2,
+    "[javascript]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode",
+        "editor.formatOnSave": true
     },
     "prettier.jsxSingleQuote": true,
     "prettier.printWidth": 120,
@@ -39,19 +22,14 @@
     "javascript.referencesCodeLens.showOnAllFunctions": true,
     "typescript.referencesCodeLens.enabled": true,
     "typescript.referencesCodeLens.showOnAllFunctions": true,
-    // does fetch when he does Pull
-    "git.fetchOnPull": true,
     // move file
     "javascript.updateImportsOnFileMove.enabled": "always",
     "typescript.updateImportsOnFileMove.enabled": "always",
-    // color
-    "vscode-color-picker.languages": [
-        "javascript",
-        "typescript",
-        "javascriptreact",
-        "typescriptreact",
-    ],
+	// debug
+	"terminal.integrated.defaultProfile.linux": "JavaScript Debug Terminal",
+	"terminal.integrated.defaultProfile.windows": "JavaScript Debug Terminal",
+	"terminal.integrated.defaultProfile.osx": "JavaScript Debug Terminal",
     // olther
     "extensions.ignoreRecommendations": false,
-    "prettier.useEditorConfig": false,
+    "git.fetchOnPull": true
 }

@@ -1,113 +1,203 @@
-# Pixi’VN template (React + Vite + MUI joy)
+# Pixi’VN - PixiJS Game Engine
 
-![pixi-vn-cover-react](https://github.com/user-attachments/assets/2abc8047-be07-487d-bf9b-de1c1f7c2ca2)
+![pixi-vn-cover](https://github.com/user-attachments/assets/28c41fe1-c539-4ebb-b7d4-8cb9f79e089e)
 
-This is a template for creating visual novels in React. It uses the Pixi’VN library and Vite as a build tool.
-This Template contains basic functionality inspired by the widespread Visual Noval engine Ren'Py.
+Pixi’VN is a very versatile and powerful visual novel/2D game engine. It is based on JavaScript/TypeScript and uses the [Pixi.js](https://pixijs.com/) library for rendering.
 
-## Overview
+Its great versatility is due to the fact that Pixi’VN is a npm package, that provides various core features to manage story steps, dialogues, character, canvas, variable storage, saving and loading, and much more. This means that it can be used both to create visual novels and to create other types of 2D games (such as Point and Click Adventure Games, RPGs, etc...), with your favorite JavaScript framework (React, Vue, Angular, etc...).
 
-For testing purposes we will recreate the visual novel [Breakdown](https://joshpowlison.itch.io/breakdown) with Pixi’VN in this guide. Breakdown is a short story that has all the features that a visual novel should have. Josh Powlison, the creator of Breakdown, has given us permission to use his narration for educational purposes❤️.
+Pixi’VN provides the ability to use [Templates](#project-initialization) to get started quickly. Less experienced developers can use these templates to create a visual novel without much knowledge of JavaScript/TypeScript.
 
-The first page that appears is the main menu. From there, you can start the game, load a saved game, or go to the settings.
+With the [PixiVNJson](https://pixi-vn.web.app/other-topics/pixi-vn-json) implementation you have the option to use various types of narrative languages ​​(in addition to JavaScript/TypeScript). Currently you can use the following:
 
-The game page is in `/narration` route. It contains the text box, character avatar, and canvas for the background image. The text box displays the text of the current dialogue. The character avatar displays the character speaking the dialogue. The background image is the background of the scene.
-When a choice has to be made, the choices are displayed at the top of the screen.
+* [*ink*](https://pixi-vn.web.app/ink/ink)
+* [Ren'Py](https://pixi-vn.web.app/renpy/renpy)
 
-When you are in the game page, you can access with many features through a list of buttons located at the bottom. In this list you can save the game, load a saved game, skip the dialogue, auto play the dialogue, access to the history modal, and access to the settings modal.
+Pixi’VN offers the possibility of adding an HTML Element with the same dimensions as the [PixiJS Canvas](https://pixi-vn.web.app/start/canvas) to add an **UI** with JavaScript frameworks.
 
-The history modal is a list of all the dialogues and choices that have been displayed.
+By "UI" is meant the elements that are above the canvas, such as buttons, forms, etc.
 
-The settings modal allows you to change the text speed, go to full screen, edit theme colors, and change go to main menu. The settings for the audio have not been added nor the libraries to manage it, but I recommend adding them.
+![Frame_Aufbau](https://firebasestorage.googleapis.com/v0/b/pixi-vn.appspot.com/o/public%2FPixiVN_interface.png?alt=media)
 
-### Keyboard shortcuts (hotkeys)
+This allows the use of systems such as React, Vue, Angular, etc. to create much more complex **UI screens** with excellent performance.
 
-* `Space` or `Enter`: Continue the dialogue.
-* `Keep Space` or `Keep Enter`: Skip the dialogue.
-* `Alt` + `S`: Quick save the game.
-* `Alt` + `L`: Quick load the game.
-* `Alt` + `H`: Open the history modal.
-* `Esc`: Open the settings modal.
-* `Alt` + `V`: Hide the UI (Show only the canvas).
+* [Angular](https://pixi-vn.web.app/start/interface-angular)
+* [React Interface](https://pixi-vn.web.app/start/interface-react)
+* [Vue](https://pixi-vn.web.app/start/interface-vue)
 
-### Used libraries
+## Wiki
 
-This template uses the following libraries:
+* [Why Pixi’VN?](https://pixi-vn.web.app/start/why)
+* [Get Started](https://pixi-vn.web.app/start/getting-started)
+* Make your first:
+  * [Visual Novel](https://pixi-vn.web.app/start/make-visual-novel)
+  * [Point and Click adventure game](https://pixi-vn.web.app/start/make-point-and-click)
+  * [RPG game](https://pixi-vn.web.app/start/make-rpg)
 
-Core libraries:
+## First steps
 
-* [Pixi’VN](https://www.npmjs.com/package/@drincs/pixi-vn): A visual novel library.
-* [Vite](https://vitejs.dev/): A build tool that aims to provide a faster and leaner development experience for modern web projects.
-* [Vite Checker](https://www.npmjs.com/package/vite-plugin-checker): A Vite plugin that checks TypeScript types and ESLint on each build.
-* [PWA Vite Plugin](https://vite-pwa-org.netlify.app): A Vite plugin that provides PWA support. This allows the possibility of installing the game as a Progressive Web App.
-* [Zustand](https://zustand-demo.pmnd.rs/): A small, fast, and scalable state management library.
-* [React Router](https://reactrouter.com/): A library that provides routing for React applications.
-* [Tanstack Query](https://tanstack.com/tanstack-query/): A library that provides a set of tools for getting, caching, and updating game data.
-  <img width="44" alt="image" src="https://github.com/user-attachments/assets/bf70dddc-68c0-48f4-9c41-74c22f54e3d1">
-  You can use the following button to show Tanstack Query interactions with the game. (the button will be automatically hidden when released)
-* [Tailwind CSS](https://tailwindcss.com/): A utility-first CSS framework for rapidly building custom designs.
-  * [Tailwind CSS Motion](https://rombo.co/tailwind/): A library that provides a set of utilities for creating animations with Tailwind CSS.
+* [Characters](https://pixi-vn.web.app/start/character)
+* [Narration](https://pixi-vn.web.app/start/narration):
+  * [Narration with ink](https://pixi-vn.web.app/ink/ink):
+    * [Characters](https://pixi-vn.web.app/ink/ink-character)
+    * [Open a knot](https://pixi-vn.web.app/ink/ink-label)
+    * [Variables](https://pixi-vn.web.app/ink/ink-variables)
+    * [Markup language (to add text style)](https://pixi-vn.web.app/ink/ink-markup)
+    * [Input](https://pixi-vn.web.app/ink/ink-input)
+    * [Canvas](https://pixi-vn.web.app/ink/ink-canvas)
+    * [Sounds and Music](https://pixi-vn.web.app/ink/ink-sound)
+    * [Assets management](https://pixi-vn.web.app/ink/ink-assets)
+    * [Pause](https://pixi-vn.web.app/ink/ink-pause)
+    * [Text replacement](https://pixi-vn.web.app/ink/ink-replacement)
+    * [Translating](https://pixi-vn.web.app/ink/ink-translate)
+    * [Custom Hashtag Script](https://pixi-vn.web.app/ink/ink-hashtag)
+  * [Narration with Ren’Py](https://pixi-vn.web.app/renpy/renpy)
+  * Narration with JS/TS:
+    * [Dialogue](https://pixi-vn.web.app/start/dialogue)
+    * [Label and Game Step](https://pixi-vn.web.app/start/labels)
+      * [Game flow with labels](https://pixi-vn.web.app/start/labels-flow)
+      * [Label features](https://pixi-vn.web.app/start/labels-advanced)
+    * [Choice Menus](https://pixi-vn.web.app/start/choices)
+    * [Input](https://pixi-vn.web.app/start/input)
+    * [History](https://pixi-vn.web.app/start/history)
+    * [Translating](https://pixi-vn.web.app/start/translate)
+    * [Markup language (to add text style)](https://pixi-vn.web.app/start/markup)
+      * [Markdown](https://pixi-vn.web.app/start/markup-markdown)
+      * [Typewriter effect](https://pixi-vn.web.app/start/markup-typewriter)
+    * [Other features](https://pixi-vn.web.app/start/other-narrative-features)
+* [PixiJS Canvas](https://pixi-vn.web.app/start/canvas):
+  * [Initialize the canvas](https://pixi-vn.web.app/start/canvas-initialize)
+  * [Canvas alias](https://pixi-vn.web.app/start/canvas-alias)
+  * [Canvas Components](https://pixi-vn.web.app/start/canvas-components)
+    * [ImageSprite](https://pixi-vn.web.app/start/canvas-images)
+    * [ImageContainer](https://pixi-vn.web.app/start/canvas-image-container)
+    * [VideoSprite](https://pixi-vn.web.app/start/canvas-videos)
+    * [Filters](https://pixi-vn.web.app/start/canvas-filters)
+    * [Lights](https://pixi-vn.web.app/start/canvas-lights)
+    * [Spine 2D](https://pixi-vn.web.app/start/canvas-spine2d)
+  * [Canvas functions](https://pixi-vn.web.app/start/canvas-functions)
+  * [Position properties](https://pixi-vn.web.app/start/canvas-position)
+  * [Transitions](https://pixi-vn.web.app/start/canvas-transition)
+  * [Animations and Effects](https://pixi-vn.web.app/start/canvas-animations-effects)
+    * [Primitives (ticker)](https://pixi-vn.web.app/start/canvas-tickers)
+      * [Tickers methods](https://pixi-vn.web.app/start/canvas-tickers-functions)
+    * [Articulated](https://pixi-vn.web.app/start/canvas-articulated-animations-effects)
+* [Sounds and Music](https://pixi-vn.web.app/start/sound)
+* [Assets](https://pixi-vn.web.app/start/assets)
+  * [Assets management](https://pixi-vn.web.app/start/assets-management)
+* [Game storage](https://pixi-vn.web.app/start/storage):
+  * [Flags Management](https://pixi-vn.web.app/start/flags)
+  * [Stored Classes](https://pixi-vn.web.app/start/stored-classes)
+* [UI with JavaScript Framework](https://pixi-vn.web.app/start/interface)
+  * JavaScript Frameworks
+    * [Angular UI](https://pixi-vn.web.app/start/interface-angular)
+    * [React UI](https://pixi-vn.web.app/start/interface-react)
+    * [Vue UI](https://pixi-vn.web.app/start/interface-vue)
+  * [Navigate/switch between UI screens](https://pixi-vn.web.app/start/interface-navigate)
+  * [Connect the UI with the storage](https://pixi-vn.web.app/start/interface-connect-storage)
+* [Save and Load](https://pixi-vn.web.app/start/save)
+* [Distribution](https://pixi-vn.web.app/start/distribution)
+  * [Website distribution](https://pixi-vn.web.app/start/distribution-website)
+  * [Desktop & mobile devices](https://pixi-vn.web.app/start/distribution-desktop-mobile)
 
-UI libraries:
+## Other topics
 
-* [Mui Joy](https://mui.com/joy-ui/getting-started/): A React UI framework that provides a set of components and styles for building a website.
-* [Motion](https://motion.dev/): A simple yet powerful motion library for React.
-* [Notistack](https://iamhosseindhv.com/notistack): A library that provides snackbar notifications for React.
-* [React Color Palette](https://www.npmjs.com/package/react-color-palette): A library that provides a color picker for React.
+* [FAQ](https://pixi-vn.web.app/other-topics/faq)
+* [Intecept Events](https://pixi-vn.web.app/other-topics/intercept-events)
+* [Pixi’VN + Json](https://pixi-vn.web.app/other-topics/pixi-vn-json)
 
-Text libraries:
+## Prerequisites
 
-* [i18next](https://www.i18next.com/): A library that gives the possibility to manage multiple translations in the application.
-* [React Markdown](https://www.npmjs.com/package/react-markdown): A library that allows you to render markdown in React components.
-  * [React Markdown Typewriter](hhttps://www.npmjs.com/package/react-markdown-typewriter): This library provides a new component, MarkdownTypewriter, that combines the Markdown component of react-markdown with the animation of typewriter. The animation was created entirely with motion.
+Before starting, you must have the following tools installed:
 
-## How to use
+* [Node.js](https://nodejs.org/) version 18 or higher.
+* Text Editor with TypeScript support.
+  * [Visual Studio Code](https://code.visualstudio.com/)
+  * [Cursor](https://www.cursor.com/)
+  * [VSCodium](https://vscodium.com/)
+* (Recommended) [Git](https://git-scm.com/)
+  * Have a [GitHub account](https://github.com/)
 
-Before starting, you need to have Node.js installed on your computer. If you don't have it, you can download it [here](https://nodejs.org/).
+## Project Initialization
 
-### Recommended Visual Studio Code extensions
-
-* [JavaScript and TypeScript Nightly](https://marketplace.visualstudio.com/items?itemName=ms-vscode.vscode-typescript-next): Provides JavaScript and TypeScript nightlies.
-* [ESLint](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint): Integrates ESLint into VS Code.
-* [vscode-color-picker](https://marketplace.visualstudio.com/items?itemName=antiantisepticeye.vscode-color-picker): A color picker for Visual Studio Code.
-* [Version Lens](https://marketplace.visualstudio.com/items?itemName=pflannery.vscode-versionlens): Shows the latest version for each package using code lens.
-
-### Change the icon
-
-You can change the icon of the game by replacing the images in the `public` folder.
-
-## Installation
-
-First, is necessary install the dependencies. To do this, open a terminal in the root folder of the project and run the following command:
+If you want to start a new project, you can use the following command to initialize a new project with the Pixi’VN template:
 
 ```bash
-npm install
+# npm
+npm create pixi-vn@latest
+
+# yarn
+yarn create pixi-vn
+
+# pnpm
+pnpm create pixi-vn
+
+# bun
+bun create pixi-vn
+
+# deno
+deno init --npm pixi-vn
 ```
 
-## Start the web application
+The supported template presets are:
 
-To start the web application, run the following command:
+**Visual Novel - React**:
+
+* **[Visual Novel - React - Typescript - Web page](https://github.com/DRincs-Productions/pixi-vn-react-template)**
+* **[Visual Novel - React - Typescript - Web page + Desktop + Mobile](https://github.com/DRincs-Productions/pixi-vn-react-template/tree/tauri)**
+* **[Visual Novel - React - Ink + Typescript - Web page](https://github.com/DRincs-Productions/pixi-vn-react-template/tree/ink)**
+* **[Visual Novel - React - Ink + Typescript - Web page + Desktop + Mobile](https://github.com/DRincs-Productions/pixi-vn-react-template/tree/ink-tauri)**
+
+( More templates will be added in the future, see this [issue](https://github.com/DRincs-Productions/pixi-vn/issues/162) for more information )
+
+After the project is initialized, you can open the project directory with your text editor (VSCode is recommended) and start developing your visual novel.
+
+Into all templates there is a `README.md` file with more information about the project.
+
+## Package Installation
+
+For installing the Pixi’VN package, you can use the following command:
 
 ```bash
-npm start
+# npm
+npm install @drincs/pixi-vn
+
+# yarn
+yarn add @drincs/pixi-vn
+
+# pnpm
+pnpm add @drincs/pixi-vn
+
+# bun
+bun add @drincs/pixi-vn
 ```
 
-This command will start the development server. Open [http://localhost:5173](http://localhost:5173) to view it in the browser.
+## Usage
 
-### Debugging the web application
+Now you must initialize the Pixi’VN window before using the engine.
 
-If you are using Visual Studio Code, you can use the debug configuration provided with the template. To do this, after launching `npm start`, go to the debug section and select the `Launch Chrome` configuration.
+For example, you add the following code to the `main.ts` or `index.ts` (It depends on your project configuration):
 
-## Distribution
+```typescript
+import { canvas, narration, clearAllGameDatas } from '@drincs/pixi-vn'
+import App from './App'
+import './index.css'
 
-### Web application
+// Canvas setup with PIXI
+const body = document.body
+if (!body) {
+    throw new Error('body element not found')
+}
 
-To build the project, run the following command:
+canvas.initialize(body, {
+    height: 1080,
+    width: 1920,
+    backgroundColor: "#303030"
+})
 
-```bash
-npm run build
+// read more here: https://pixi-vn.web.app/start/other-narrative-features.html#how-manage-the-end-of-the-game
+narration.onGameEnd = async (props) => {
+    clearAllGameDatas()
+    props.navigate("/")
+}
 ```
-
-This command will create a `dist` folder with the files necessary to run the application. You can deploy this folder to a web server.
-
-You can read more about the possibilities of hosting in the [Pixi’VN documentation](https://pixi-vn.web.app/advanced/distribution.html#hosting).
