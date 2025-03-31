@@ -1,4 +1,4 @@
-import {
+import PIXIVN, {
     canvas,
     CanvasManagerStatic,
     GameUnifier,
@@ -9,6 +9,9 @@ import {
     storage,
     StorageManagerStatic,
 } from "@drincs/pixi-vn";
+import { Devtools } from "@pixi/devtools";
+import { ApplicationOptions } from "pixi.js";
+import { getGamePath } from "./utils/path-utility";
 
 export namespace Game {
     /**
@@ -143,11 +146,5 @@ export namespace Game {
     }
 }
 
-export default {
-    canvas: canvas,
-    narration: narration,
-    sound: sound,
-    storage: storage,
-    Game,
-    GameUnifier,
-};
+export { Container, ImageContainer, ImageSprite, Sprite, Text, VideoSprite } from "@drincs/pixi-vn";
+export { canvas, GameUnifier, narration, PIXIVN, sound, storage };
