@@ -11,7 +11,10 @@ import PIXIVN, {
 } from "@drincs/pixi-vn";
 import { Devtools } from "@pixi/devtools";
 import { ApplicationOptions } from "pixi.js";
+import { version as ENGINE_VERSION } from "../package.json";
+import { GameState } from "./interfaces";
 import { getGamePath } from "./utils/path-utility";
+export { version as ENGINE_VERSION } from "../package.json";
 
 export namespace Game {
     /**
@@ -107,7 +110,7 @@ export namespace Game {
      */
     export function exportGameState(): GameState {
         return {
-            pixivn_version: PIXIVN_VERSION,
+            pixivn_version: ENGINE_VERSION,
             stepData: narration.export(),
             storageData: storage.export(),
             canvasData: canvas.export(),
