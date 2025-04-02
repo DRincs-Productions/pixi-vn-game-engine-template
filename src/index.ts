@@ -6,6 +6,7 @@ import PIXIVN, {
     narration,
     NarrationManagerStatic,
     sound,
+    stepHistory,
     storage,
     StorageManagerStatic,
 } from "@drincs/pixi-vn";
@@ -15,6 +16,7 @@ import { version as ENGINE_VERSION } from "../package.json";
 import { GameState } from "./interfaces";
 import { getGamePath } from "./utils/path-utility";
 export { version as ENGINE_VERSION } from "../package.json";
+export * from "./interfaces";
 
 export namespace Game {
     /**
@@ -43,7 +45,7 @@ export namespace Game {
         options: Partial<ApplicationOptions> & { width: number; height: number },
         devtoolsOptions?: Devtools
     ) {
-        GameUnifier.initialize({
+        GameUnifier.init({
             getCurrentGameStepState: () => {
                 return {
                     path: getGamePath(),
@@ -69,7 +71,7 @@ export namespace Game {
             },
             getOpenedLabels: () => narration.openedLabels.length,
             addHistoryItem: (historyInfo, opstions) => {
-                return history.add(historyInfo, opstions);
+                return stepHistory.add(historyInfo, opstions);
             },
             getCurrentStepsRunningNumber: () => NarrationManagerStatic.stepsRunning,
             // canvas
@@ -90,7 +92,7 @@ export namespace Game {
             setFlag: (name, value) => storage.setFlag(name, value),
             onLabelClosing: (openedLabelsNumber) => StorageManagerStatic.clearOldTempVariables(openedLabelsNumber),
         });
-        return await canvas.initialize(element, options, devtoolsOptions);
+        return await canvas.init(element, options, devtoolsOptions);
     }
 
     /**
@@ -101,7 +103,7 @@ export namespace Game {
         canvas.clear();
         sound.clear();
         narration.clear();
-        history.clear();
+        stepHistory.clear();
     }
 
     /**
@@ -110,12 +112,12 @@ export namespace Game {
      */
     export function exportGameState(): GameState {
         return {
-            pixivn_version: ENGINE_VERSION,
+            engine_version: ENGINE_VERSION,
             stepData: narration.export(),
             storageData: storage.export(),
             canvasData: canvas.export(),
             soundData: sound.export(),
-            historyData: history.export(),
+            historyData: stepHistory.export(),
             path: getGamePath(),
         };
     }
