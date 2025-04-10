@@ -129,12 +129,6 @@ export namespace Game {
      * @param navigate The function to navigate to a path
      */
     export async function restoreGameState(data: GameState, navigate: (path: string) => void) {
-        if (data.stepData.hasOwnProperty("stepsHistory") && data.stepData.stepsHistory) {
-            data.historyData.stepsHistory = data.stepData.stepsHistory;
-        }
-        if (data.stepData.hasOwnProperty("originalStepData") && data.stepData.originalStepData) {
-            data.historyData.originalStepData = data.stepData.originalStepData;
-        }
         await narration.restore(data.stepData, HistoryManagerStatic.lastHistoryStep);
         storage.restore(data.storageData);
         await canvas.restore(data.canvasData);
