@@ -17,6 +17,7 @@ import { GameState } from "./interfaces";
 import { getGamePath } from "./utils/path-utility";
 export { version as ENGINE_VERSION } from "../package.json";
 export * from "./interfaces";
+export * from "./utils";
 
 export namespace Game {
     /**
