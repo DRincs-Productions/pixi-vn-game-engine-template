@@ -129,6 +129,7 @@ export namespace Game {
      * @param navigate The function to navigate to a path
      */
     export async function restoreGameState(data: GameState, navigate: (path: string) => void) {
+        stepHistory.restore(data.historyData);
         await narration.restore(data.stepData, HistoryManagerStatic.lastHistoryStep);
         storage.restore(data.storageData);
         await canvas.restore(data.canvasData);
