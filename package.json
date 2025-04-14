@@ -19,7 +19,7 @@
     "pixi.js": "^8.9.1"
   },
   "devDependencies": {
-    "@drincs/pixi-vn": "^1.0.1",
+    "@drincs/pixi-vn": "^1.0.2",
     "@types/crypto-js": "^4.2.2",
     "crypto-js": "^4.2.0",
     "ts-node": "^10.9.2",
