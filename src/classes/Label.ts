@@ -2,30 +2,6 @@ import { LabelAbstract, LabelProps, StepLabelType } from "@drincs/pixi-vn";
 import { AdditionalShaSpetsEnum } from "@drincs/pixi-vn/dist/narration/interfaces/HistoryStep";
 import sha1 from "crypto-js/sha1";
 
-/**
- * Label is a class that contains a list of steps, which will be performed as the game continues.
- * For Ren'py this is the equivalent of a label.
- * @example
- * ```typescript
- * const START_LABEL_ID = "StartLabel"
- *
- * export const startLabel = newLabel(START_LABEL_ID,
- *     [
- *         (props) => {
- *             canvas.clear()
- *             narration.dialogue = { character: liam, text: "Which test do you want to perform?" }
- *             narration.choiceMenuOptions = [
- *                 new ChoiceMenuOption("Events Test", eventsTestLabel),
- *                 new ChoiceMenuOption("Show Image Test", showImageTest),
- *             ]
- *         },
- *         (props) => narration.jumpLabel(START_LABEL_ID, props),
- *     ]
- * )
- *
- * narration.callLabel(StartLabel)
- * ```
- */
 export default class Label<T extends {} = {}> extends LabelAbstract<Label<T>, T> {
     public get stepCount(): number {
         return this.steps.length;

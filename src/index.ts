@@ -147,4 +147,4 @@ export namespace Game {
 }
 
 export { Container, ImageContainer, ImageSprite, Sprite, Text, VideoSprite } from "@drincs/pixi-vn";
-export { canvas, GameUnifier, narration, PIXIVN, sound, storage };
+export { canvas, GameUnifier, narration, PIXIVN, sound, stepHistory, storage };
