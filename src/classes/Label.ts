@@ -1,5 +1,4 @@
 import { LabelAbstract, LabelProps, StepLabelType } from "@drincs/pixi-vn";
-import { AdditionalShaSpetsEnum } from "@drincs/pixi-vn/dist/narration/interfaces/HistoryStep";
 import sha1 from "crypto-js/sha1";
 
 export default class Label<T extends {} = {}> extends LabelAbstract<Label<T>, T> {
@@ -33,7 +32,7 @@ export default class Label<T extends {} = {}> extends LabelAbstract<Label<T>, T>
     public getStepSha(index: number): string {
         if (index < 0 || index >= this.steps.length) {
             console.warn("stepSha not found, setting to ERROR");
-            return AdditionalShaSpetsEnum.ERROR;
+            return "error";
         }
         try {
             let step = this.steps[index];
@@ -41,7 +40,7 @@ export default class Label<T extends {} = {}> extends LabelAbstract<Label<T>, T>
             return sha1String.toString();
         } catch (e) {
             console.warn("stepSha not found, setting to ERROR", e);
-            return AdditionalShaSpetsEnum.ERROR;
+            return "error";
         }
     }
 }
