@@ -59,7 +59,7 @@ export namespace Game {
             },
             restoreGameStepState: async (state, navigate) => {
                 HistoryManagerStatic._originalStepData = state;
-                NarrationManagerStatic._openedLabels = state.openedLabels;
+                NarrationManagerStatic.openedLabels = state.openedLabels;
                 storage.restore(state.storage);
                 await canvas.restore(state.canvas);
                 sound.restore(state.sound);
