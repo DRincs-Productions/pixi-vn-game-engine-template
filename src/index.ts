@@ -41,7 +41,7 @@ export namespace Game {
      * })
      * ```
      */
-    export async function initialize(
+    export async function init(
         element: HTMLElement,
         options: Partial<ApplicationOptions> & { width: number; height: number },
         devtoolsOptions?: Devtools
