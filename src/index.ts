@@ -5,6 +5,7 @@ import PIXIVN, {
     HistoryManagerStatic,
     narration,
     NarrationManagerStatic,
+    RegisteredCharacters,
     sound,
     stepHistory,
     storage,
@@ -71,10 +72,13 @@ export namespace Game {
                 NarrationManagerStatic._stepCounter = value;
             },
             getOpenedLabels: () => narration.openedLabels.length,
-            addHistoryItem: (historyInfo, opstions) => {
-                return stepHistory.add(historyInfo, opstions);
+            addHistoryItem: (historyInfo, options) => {
+                return stepHistory.add(historyInfo, options);
             },
             getCurrentStepsRunningNumber: () => NarrationManagerStatic.stepsRunning,
+            getCharacter: (id: string) => {
+                return RegisteredCharacters.get(id);
+            },
             // canvas
             onGoNextEnd: async () => {
                 CanvasManagerStatic._tickersToCompleteOnStepEnd.tikersIds.forEach(({ id }) => {
@@ -130,7 +134,11 @@ export namespace Game {
      */
     export async function restoreGameState(data: GameState, navigate: (path: string) => void) {
         stepHistory.restore(data.historyData);
-        await narration.restore(data.stepData, HistoryManagerStatic.lastHistoryStep);
+        const lastHistoryKey = stepHistory.lastKey;
+        if (typeof lastHistoryKey === "number") {
+            const historyItem = stepHistory.stepsInfoMap.get(lastHistoryKey) || null;
+            await narration.restore(data.stepData, historyItem);
+        }
         storage.restore(data.storageData);
         await canvas.restore(data.canvasData);
         sound.restore(data.soundData);
